@@ -1,4 +1,4 @@
-import { FunctionalComponent, h } from 'preact';
+import { FunctionalComponent, h, render, Fragment } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
 
@@ -17,8 +17,11 @@ const Header: FunctionalComponent = () => {
                     John
                 </Link>
             </nav>
+            <ul><Foo /></ul>
         </header>
     );
 };
+
+const Foo: Record<string, string> = () => <Fragment><div>foo!!!</div></Fragment>;
 
 export default Header;
